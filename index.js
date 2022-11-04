@@ -18,7 +18,7 @@ function parseCommandLineArgs(){
         .usage('Usage: program [options]')
         .example('-s stringarray.txt -w stringarraywrappers.txt -n _0x471d,_0x9cad,_0x4cd9 '
         + '-r stringarrayrotate.txt -i obfuscated.txt -o output.txt')
-        .example('-i obfuscated.txt -o deobfuscated.txt')
+        .example('-i script.js -o script.decoded.js')
         .option('inputPath', {
             alias: 'i',
             description: 'Path of input (obfuscated) file.',
@@ -250,7 +250,7 @@ function main(){
     usefulModule.writeTextFile(argv.outputPath, deobfuscatedSourceCode);
     logger.debug(`[index.js] Deobfuscated source code: \n${deobfuscatedSourceCode}`);
 
-    logger.info('[index.js] Finished deobfuscation process.');
+    logger.info('[index.js] Finished decoding process.');
 }
 
 main();
